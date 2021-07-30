@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="column-9">
+        <div class="card text-center">
+            <div class="card-header">
+                <h2>Name:{{a.title}}.{{a.first}} {{a.last}}</h2> 
+            </div>
+          
+            <div class="card-body">
+                <h5 class = 'btn btn-primary  btn-sm'>Job Title {{a.job_title}}</h5><br>
+                <h5 class = 'btn btn-primary  btn-sm'>Email:{{ a.email }}</h5><br>
+                <h5 class = 'btn btn-primary  btn-sm' >Number:{{ a.contact_number }}</h5><br>
+                <h5 class = 'btn btn-primary  btn-sm'>Joined:{{ a.join_date|date:"d-M-Y" }}</h5><br>
+                 <h5><a href = '#' class ='btn btn-primary  btn-sm'>{{a.image_url}}</a><br>
+                <h5><a href='#' class='btn btn-primary  btn-sm'>{{a.medium_url}}</a><br>
+                <h5><a href='#' class='btn btn-primary  btn-sm'>{{a.thumbnail_url}}</a><br>
+                 
+
+        
+                <h5 class = 'btn btn-primary  btn-sm'>Team:{{ a.team }}</h5><br>
+                
+        
+            </div>
+            <div class="card-footer text-muted">
+               <h6 class="btn btn-secondary btn-sm">Login in: {{ a.last_login|date:'Y-M-D h:m:s' }}-Loggedin <span>{{a.loggedIn}}</span></h6> 
+            </div>
+
+            <div class="card-footer-end">
+                <a class="btn btn-warning"href="{% url 'list' %}">Home</a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+  
+{% endblock content %}
